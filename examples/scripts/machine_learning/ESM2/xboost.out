@@ -1,0 +1,278 @@
+       SAM  NAD  NADP  ...  embedding_1277  embedding_1278  embedding_1279
+0        0    0     0  ...       -0.096517        0.021848        0.038232
+1        0    0     0  ...       -0.229809        0.026103        0.136148
+2        0    0     0  ...       -0.177731       -0.042359        0.048335
+3        0    0     0  ...       -0.131825       -0.029509        0.087805
+4        0    0     0  ...       -0.233185       -0.022041        0.089905
+...    ...  ...   ...  ...             ...             ...             ...
+73302    0    0     0  ...       -0.166828        0.001190        0.017346
+73303    0    1     0  ...       -0.086319       -0.027511        0.091695
+73304    0    1     0  ...       -0.135274        0.011602        0.068837
+73305    0    0     0  ...       -0.104249        0.041925        0.004400
+73306    0    0     0  ...       -0.245896       -0.027553        0.113302
+
+[73307 rows x 1293 columns]
+       NAD  NADP  FAD  SAM  CoA  THF  FMN  Menaquinone  GSH  Ubiquinone  \
+1        0     0    0    0    0    0    0            0    0           1   
+2        0     0    0    0    0    0    0            0    1           0   
+5        0     0    0    0    0    0    0            0    0           0   
+13       0     0    0    0    0    0    0            0    0           0   
+14       0     0    0    0    0    0    1            0    0           0   
+...    ...   ...  ...  ...  ...  ...  ...          ...  ...         ...   
+73301    1     0    0    0    0    0    0            0    0           0   
+73302    0     0    0    0    0    0    0            1    0           0   
+73303    1     0    0    0    0    0    0            0    0           1   
+73305    0     0    0    0    0    0    0            0    0           0   
+73306    0     0    0    0    0    0    0            0    0           0   
+
+       Plastoquinone  Ferredoxin  Ferricytochrome  
+1                  0           0                0  
+2                  0           0                0  
+5                  0           0                0  
+13                 0           1                0  
+14                 0           0                0  
+...              ...         ...              ...  
+73301              0           0                0  
+73302              0           0                0  
+73303              0           0                0  
+73305              0           0                0  
+73306              0           0                1  
+
+[21993 rows x 13 columns]
+Fitting 3 folds for each of 64 candidates, totalling 192 fits
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=30.6min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=40.9min
+/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/joblib/externals/loky/process_executor.py:752: UserWarning: A worker stopped while some jobs were given to the executor. This can be caused by a too short worker timeout or by a memory leak.
+  warnings.warn(
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=30.8min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=41.0min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=30.9min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=41.1min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=30.6min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=46.4min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=30.6min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=47.3min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=30.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=47.9min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=30.2min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=90.9min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=57.0min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=66.3min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=57.5min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=66.5min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=57.6min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=66.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=30.3min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=96.3min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=30.5min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=97.0min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=29.9min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=98.0min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=33.8min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=94.5min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=33.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=95.0min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=33.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=96.0min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=57.8min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=75.0min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=32.1min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=100.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=58.3min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=74.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=31.3min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=103.5min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=33.3min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=103.1min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=33.8min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=24.9min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=81.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=60.2min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=32.1min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=52.0min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=34.0min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=29.4min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=31.7min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=54.8min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=34.5min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=116.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=34.3min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=118.3min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=63.3min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=31.6min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=55.1min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=124.6min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=26.3min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=125.5min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=26.2min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=25.2min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=63.0min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=31.4min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=67.1min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=35.5min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=35.2min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=35.3min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=65.5min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=99.2min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=65.5min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=100.6min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=119.0min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=54.3min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=107.3min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=27.0min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=39.5min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=51.9min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=122.6min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=116.4min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=54.9min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=52.0min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=124.8min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=53.5min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=124.8min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=108.5min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=26.1min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=39.8min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=102.7min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=103.8min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=98.9min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=52.2min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=124.0min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=110.4min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=122.4min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=64.9min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=63.1min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=58.8min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=54.0min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=118.2min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=68.0min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=51.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=123.4min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=66.1min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=57.8min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=54.0min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=54.4min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=63.8min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=31.6min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=112.4min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=63.6min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=31.9min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=114.4min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=106.4min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=27.2min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=84.5min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=101.8min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=116.8min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=99.7min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=120.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=102.4min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=121.1min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=219.4min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=113.2min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=107.1min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=96.9min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=128.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=113.5min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=114.5min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=114.9min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=108.3min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=223.4min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=99.5min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=113.3min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=120.7min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=96.9min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=96.8min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=100.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=230.8min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=113.6min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=122.4min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=116.0min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=121.4min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=99.8min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=93.1min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=233.6min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=234.3min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=235.2min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=112.4min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=30.5min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=99.8min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=88.6min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=111.7min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=30.6min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=102.1min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=109.5min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=29.6min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=102.9min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=98.8min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=243.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=243.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=247.5min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=248.2min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=256.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=257.0min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=59.2min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=221.5min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=34.0min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=25.5min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=228.7min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=33.9min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=25.7min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=230.3min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=123.5min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=172.0min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=59.7min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=236.0min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=34.0min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=25.8min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=244.7min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=175.8min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=0.6; total time=178.2min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=124.0min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=184.4min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=124.2min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=184.8min
+[CV] END estimator__colsample_bytree=0.6, estimator__gamma=0.5, estimator__learning_rate=0.1, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=0.6; total time=34.2min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=3, estimator__n_estimators=100, estimator__random_state=42, estimator__subsample=1.0; total time=25.5min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=0.5, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=244.8min
+[CV] END estimator__colsample_bytree=1.0, estimator__gamma=2, estimator__learning_rate=0.01, estimator__max_depth=9, estimator__n_estimators=500, estimator__random_state=42, estimator__subsample=1.0; total time=188.7min
+/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in samples with no predicted labels. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Recall and F-score are ill-defined and being set to 0.0 in samples with no true labels. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+{'accuracy': 0.9581685081616879, 'report': '              precision    recall  f1-score   support\n\n           0       0.97      0.93      0.95      3885\n           1       0.97      0.93      0.95      3221\n           2       1.00      0.99      0.99      1682\n           3       0.99      0.99      0.99      3049\n           4       0.99      0.93      0.96      1084\n           5       1.00      0.99      0.99       851\n           6       0.98      0.95      0.97       788\n           7       1.00      1.00      1.00      2348\n           8       1.00      0.98      0.99       883\n           9       0.99      0.97      0.98      1306\n          10       0.99      0.99      0.99       894\n          11       1.00      0.95      0.97       981\n          12       0.99      0.96      0.98       752\n\n   micro avg       0.99      0.96      0.97     21724\n   macro avg       0.99      0.97      0.98     21724\nweighted avg       0.99      0.96      0.97     21724\n samples avg       0.84      0.84      0.84     21724\n', 'confusion': array([[[17993,   115],
+        [  262,  3623]],
+
+       [[18684,    88],
+        [  239,  2982]],
+
+       [[20309,     2],
+        [   24,  1658]],
+
+       [[18925,    19],
+        [   27,  3022]],
+
+       [[20899,    10],
+        [   78,  1006]],
+
+       [[21141,     1],
+        [   12,   839]],
+
+       [[21188,    17],
+        [   37,   751]],
+
+       [[19644,     1],
+        [   10,  2338]],
+
+       [[21107,     3],
+        [   16,   867]],
+
+       [[20680,     7],
+        [   34,  1272]],
+
+       [[21089,    10],
+        [   13,   881]],
+
+       [[21009,     3],
+        [   51,   930]],
+
+       [[21236,     5],
+        [   31,   721]]]), 'hamming_loss': 0.003899842257501513}

@@ -1,0 +1,135 @@
+Traceback (most recent call last):
+  File "/home/jgoncalves/cofactor_prediction_tool/examples/scripts/machine_learning/ESM2/BinaryRelevance.py", line 33, in <module>
+    ml.classify_and_save_results(output_dir)
+  File "/home/jgoncalves/cofactor_prediction_tool/src/cofactor_prediction_tool/machine_learning/MLEmbeddings.py", line 51, in classify_and_save_results
+    results,y_test_pred = self.multilabel_classification_results(dataset_path, classifier_name, classifier)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/cofactor_prediction_tool/src/cofactor_prediction_tool/machine_learning/MLEmbeddings.py", line 59, in multilabel_classification_results
+    data = pd.read_csv(dataset, sep='\t', index_col=0)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 838, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Calling read(nbytes) on source failed. Try engine='python'.
+Traceback (most recent call last):
+  File "/home/jgoncalves/cofactor_prediction_tool/examples/scripts/machine_learning/ESM2/ClassifierChain.py", line 32, in <module>
+    ml.classify_and_save_results(output_dir)
+  File "/home/jgoncalves/cofactor_prediction_tool/src/cofactor_prediction_tool/machine_learning/MLEmbeddings.py", line 56, in classify_and_save_results
+    results,y_test_pred = self.multilabel_classification_results(dataset_path, classifier_name, classifier)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/cofactor_prediction_tool/src/cofactor_prediction_tool/machine_learning/MLEmbeddings.py", line 64, in multilabel_classification_results
+    data = pd.read_csv(dataset, sep='\t', index_col=0).sample(frac=1).reset_index(drop=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 838, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Calling read(nbytes) on source failed. Try engine='python'.
+Traceback (most recent call last):
+  File "/home/jgoncalves/cofactor_prediction_tool/examples/scripts/machine_learning/ESM2/BinaryRelevance.py", line 33, in <module>
+    ml.classify_and_save_results(output_dir)
+  File "/home/jgoncalves/cofactor_prediction_tool/src/cofactor_prediction_tool/machine_learning/MLEmbeddings.py", line 56, in classify_and_save_results
+    results,y_test_pred = self.multilabel_classification_results(dataset_path, classifier_name, classifier)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/cofactor_prediction_tool/src/cofactor_prediction_tool/machine_learning/MLEmbeddings.py", line 64, in multilabel_classification_results
+    data = pd.read_csv(dataset, sep='\t', index_col=0).sample(frac=1).reset_index(drop=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 838, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Calling read(nbytes) on source failed. Try engine='python'.
+Traceback (most recent call last):
+  File "/home/jgoncalves/cofactor_prediction_tool/examples/scripts/machine_learning/ESM2/BinaryRelevance.py", line 40, in <module>
+    ml.classify_and_save_results(output_dir)
+  File "/home/jgoncalves/cofactor_prediction_tool/src/cofactor_prediction_tool/machine_learning/MLEmbeddings.py", line 79, in classify_and_save_results
+    results, y_test_pred = self.multilabel_classification_results(dataset_path, classifier_name, classifier)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/cofactor_prediction_tool/src/cofactor_prediction_tool/machine_learning/MLEmbeddings.py", line 99, in multilabel_classification_results
+    data = pd.read_csv(dataset, sep='\t', index_col=0).sample(frac=1).reset_index(drop=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 838, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Calling read(nbytes) on source failed. Try engine='python'.
+Traceback (most recent call last):
+  File "/home/jgoncalves/cofactor_prediction_tool/examples/scripts/machine_learning/ESM2/ExtraTrees.py", line 41, in <module>
+    ml.classify_and_save_results(output_dir)
+  File "/home/jgoncalves/cofactor_prediction_tool/src/cofactor_prediction_tool/machine_learning/MLEmbeddings.py", line 79, in classify_and_save_results
+    results, y_test_pred = self.multilabel_classification_results(dataset_path, classifier_name, classifier)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/cofactor_prediction_tool/src/cofactor_prediction_tool/machine_learning/MLEmbeddings.py", line 99, in multilabel_classification_results
+    data = pd.read_csv(dataset, sep='\t', index_col=0).sample(frac=1).reset_index(drop=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 838, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Calling read(nbytes) on source failed. Try engine='python'.

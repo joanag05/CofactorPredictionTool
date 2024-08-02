@@ -1,0 +1,138 @@
+       SAM  NAD  NADP  ...  embedding_1021  embedding_1022  embedding_1023
+0        0    0     0  ...        0.012503       -0.043451        0.065054
+1        0    0     1  ...       -0.012311       -0.132687       -0.094161
+2        0    0     0  ...       -0.058011       -0.038052        0.054511
+3        0    0     1  ...        0.005957       -0.117980       -0.000571
+4        0    0     0  ...       -0.091376        0.083914        0.260644
+...    ...  ...   ...  ...             ...             ...             ...
+73302    0    0     0  ...       -0.116388        0.030293       -0.037909
+73303    0    0     1  ...       -0.125335       -0.065252        0.074283
+73304    0    0     0  ...       -0.032453        0.052295        0.070231
+73305    0    0     0  ...        0.074201       -0.053544        0.034022
+73306    0    0     1  ...       -0.041677       -0.226980       -0.122969
+
+[73307 rows x 1037 columns]
+       NAD  NADP  FAD  SAM  CoA  THF  FMN  Menaquinone  GSH  Ubiquinone  \
+1        0     1    0    0    0    0    0            0    0           0   
+2        0     0    0    0    0    0    0            1    0           0   
+8        0     0    0    0    0    0    0            0    0           0   
+9        0     0    1    0    0    0    0            0    0           0   
+14       0     0    0    0    0    0    0            0    1           0   
+...    ...   ...  ...  ...  ...  ...  ...          ...  ...         ...   
+73297    0     0    0    1    0    0    0            0    0           0   
+73301    0     0    0    0    0    0    0            0    1           0   
+73302    0     0    0    0    0    0    1            0    0           0   
+73303    0     1    0    0    0    0    0            0    0           0   
+73305    0     0    0    0    0    0    0            0    0           0   
+
+       Plastoquinone  Ferredoxin  Ferricytochrome  
+1                  0           0                0  
+2                  0           0                0  
+8                  0           0                0  
+9                  0           0                0  
+14                 0           0                0  
+...              ...         ...              ...  
+73297              0           0                0  
+73301              0           0                0  
+73302              0           0                0  
+73303              0           0                0  
+73305              0           1                0  
+
+[21993 rows x 13 columns]
+Fitting 3 folds for each of 18 candidates, totalling 54 fits
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.5, estimator__n_estimators=50; total time=94.1min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=1.0, estimator__n_estimators=50; total time=94.3min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.5, estimator__n_estimators=50; total time=94.4min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=1.0, estimator__n_estimators=50; total time=94.7min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.5, estimator__n_estimators=50; total time=95.5min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.1, estimator__n_estimators=50; total time=95.6min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=1.0, estimator__n_estimators=50; total time=95.7min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=1.0, estimator__n_estimators=50; total time=99.8min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=1.0, estimator__n_estimators=50; total time=100.1min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.1, estimator__n_estimators=50; total time=100.1min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.1, estimator__n_estimators=50; total time=100.2min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.1, estimator__n_estimators=50; total time=100.2min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.5, estimator__n_estimators=50; total time=100.3min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=1.0, estimator__n_estimators=50; total time=100.4min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.1, estimator__n_estimators=50; total time=100.6min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.5, estimator__n_estimators=50; total time=100.8min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.1, estimator__n_estimators=50; total time=101.2min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.5, estimator__n_estimators=50; total time=101.4min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=1.0, estimator__n_estimators=100; total time=163.0min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.5, estimator__n_estimators=100; total time=163.1min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.1, estimator__n_estimators=100; total time=163.2min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.1, estimator__n_estimators=100; total time=163.6min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=1.0, estimator__n_estimators=100; total time=163.6min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.5, estimator__n_estimators=100; total time=163.7min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.5, estimator__n_estimators=100; total time=163.7min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=1.0, estimator__n_estimators=100; total time=163.9min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.1, estimator__n_estimators=100; total time=165.3min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=1.0, estimator__n_estimators=100; total time=166.8min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=1.0, estimator__n_estimators=100; total time=169.0min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.5, estimator__n_estimators=100; total time=170.0min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.1, estimator__n_estimators=100; total time=170.1min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.5, estimator__n_estimators=100; total time=170.2min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.5, estimator__n_estimators=100; total time=170.2min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=1.0, estimator__n_estimators=100; total time=170.4min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.1, estimator__n_estimators=100; total time=170.6min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.1, estimator__n_estimators=100; total time=170.8min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.5, estimator__n_estimators=200; total time=292.4min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.1, estimator__n_estimators=200; total time=292.6min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.5, estimator__n_estimators=200; total time=292.8min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.5, estimator__n_estimators=200; total time=293.6min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.1, estimator__n_estimators=200; total time=293.6min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=1.0, estimator__n_estimators=200; total time=294.0min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.1, estimator__n_estimators=200; total time=294.2min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.1, estimator__n_estimators=200; total time=294.4min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.5, estimator__n_estimators=200; total time=295.3min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=1.0, estimator__n_estimators=200; total time=295.8min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=1.0, estimator__n_estimators=200; total time=296.7min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.1, estimator__n_estimators=200; total time=298.0min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=1.0, estimator__n_estimators=200; total time=299.5min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.5, estimator__n_estimators=200; total time=299.9min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=1.0, estimator__n_estimators=200; total time=300.0min
+[CV] END estimator__algorithm=SAMME, estimator__learning_rate=0.5, estimator__n_estimators=200; total time=300.8min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=1.0, estimator__n_estimators=200; total time=300.9min
+[CV] END estimator__algorithm=SAMME.R, estimator__learning_rate=0.1, estimator__n_estimators=200; total time=300.9min
+/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in samples with no predicted labels. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/jgoncalves/miniforge3/envs/protein/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1344: UndefinedMetricWarning: Recall and F-score are ill-defined and being set to 0.0 in samples with no true labels. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+{'accuracy': 0.8809621243122812, 'report': '              precision    recall  f1-score   support\n\n           0       0.88      0.85      0.87      3885\n           1       0.88      0.81      0.85      3221\n           2       1.00      0.99      0.99      1682\n           3       0.97      0.94      0.96      3049\n           4       0.94      0.83      0.88      1084\n           5       0.99      0.95      0.97       851\n           6       0.95      0.92      0.93       788\n           7       1.00      1.00      1.00      2348\n           8       0.99      0.98      0.99       883\n           9       0.98      0.94      0.96      1306\n          10       0.98      0.95      0.97       894\n          11       0.96      0.88      0.92       981\n          12       0.96      0.89      0.93       752\n\n   micro avg       0.95      0.91      0.93     21724\n   macro avg       0.96      0.92      0.94     21724\nweighted avg       0.95      0.91      0.93     21724\n samples avg       0.79      0.79      0.79     21724\n', 'confusion': array([[[17668,   440],
+        [  579,  3306]],
+
+       [[18419,   353],
+        [  603,  2618]],
+
+       [[20311,     0],
+        [   21,  1661]],
+
+       [[18855,    89],
+        [  171,  2878]],
+
+       [[20852,    57],
+        [  181,   903]],
+
+       [[21131,    11],
+        [   39,   812]],
+
+       [[21166,    39],
+        [   66,   722]],
+
+       [[19641,     4],
+        [    9,  2339]],
+
+       [[21104,     6],
+        [   17,   866]],
+
+       [[20661,    26],
+        [   76,  1230]],
+
+       [[21081,    18],
+        [   41,   853]],
+
+       [[20972,    40],
+        [  119,   862]],
+
+       [[21211,    30],
+        [   79,   673]]]), 'hamming_loss': 0.010891577390008709}

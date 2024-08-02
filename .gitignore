@@ -1,0 +1,55 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+*.pyc
+
+/data/*
+!/tests/data/*
+*.xml
+*/*.xml
+*.fig
+tINIT_test.lp
+#Pycharm
+
+*.iml
+.idea/*
+
+/config/server_connection.json
+
+.conda/*
+
+
+.nextflow/*
+.nextflow.log.*
+.nextflow.log
+build/*
+dist/*
+case_studies/*
+nextflow/.nextflow/*
+nextflow/.nextflow.log.*
+nextflow/work/*
+./src/cofactor_prediction_tool/seqvec/weights.hdf5
+./data/Final/brenda_download.txt
+./data/Final/swiss.tsv
+./data/Final/protein_without_cofactor.tsv
+./data/Final/seq2vec/weights.hdf5
+./data/Final/ESM2/esm2_embeddings
+./data/Final/ESM2/esm2.h5
+./data/Final/ESM2/esm2.tsv
+./data/Final/ESM2/esm.tsv
+./data/Final/ESM2/ML/Label Powerset (Random Forest)_model.joblib
+./data/Final/ESM2/ML/Extra Trees_model.joblib
+./data/Final/SeqVec/seqvec1
+./data/Final/SeqVec/seqvec.h5
+./data/Final/SeqVec/seqvec.tsv
+./data/Final/SeqVec/seq.tsv
+./data/Final/SeqVec/ML/Label Powerset (Random Forest)_model.joblib
+./data/Final/SeqVec/ML/Extra Trees_model.joblib
+./data/Final/Flash/final_dataset_protflash_embeddings.tsv
+./data/Final/final_dataset_protflash_embeddings.tsv

@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: cofactor_prediction_tool
+Version: 0.0.1
+Summary: Cofactor Prediction Tool
+Home-page: https://github.com/joanag05/Cofactor_Prediction_Tool
+Author: Joana Gonçalves
+Author-email: joanaoliveira1000@gmail.com
+Project-URL: Bug Tracker, 
+Project-URL: Documentation, 
+Keywords: metabolism,biology,constraint-based,flux-balance analysis
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: cobra~=0.29.0
+Requires-Dist: numpy~=1.26.4
+Requires-Dist: pandas~=2.2.2
+Requires-Dist: joblib~=1.4.0
+Requires-Dist: scipy~=1.13.0
+Requires-Dist: torch~=2.3.0
+Requires-Dist: fair-esm~=2.0.0
+Requires-Dist: propythia~=3.0.2
+Requires-Dist: biopython~=1.83
+Requires-Dist: scikit-learn~=1.2.2
+Requires-Dist: torchvision~=0.18.0
+Requires-Dist: torchmetrics~=1.4.0.post0

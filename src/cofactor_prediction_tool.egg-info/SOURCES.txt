@@ -1,0 +1,39 @@
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+src/cofactor_prediction_tool/__init__.py
+src/cofactor_prediction_tool.egg-info/PKG-INFO
+src/cofactor_prediction_tool.egg-info/SOURCES.txt
+src/cofactor_prediction_tool.egg-info/dependency_links.txt
+src/cofactor_prediction_tool.egg-info/requires.txt
+src/cofactor_prediction_tool.egg-info/top_level.txt
+src/cofactor_prediction_tool.egg-info/zip-safe
+src/cofactor_prediction_tool/api/__init__.py
+src/cofactor_prediction_tool/api/brenda.py
+src/cofactor_prediction_tool/api/ncbi.py
+src/cofactor_prediction_tool/api/pdb.py
+src/cofactor_prediction_tool/api/sabio.py
+src/cofactor_prediction_tool/api/uniprot.py
+src/cofactor_prediction_tool/deep_learning/__init__.py
+src/cofactor_prediction_tool/deep_learning/bestesm2_hpo.pth
+src/cofactor_prediction_tool/deep_learning/cnn_esm.py
+src/cofactor_prediction_tool/deep_learning/dl copy 2.py
+src/cofactor_prediction_tool/deep_learning/dl copy.py
+src/cofactor_prediction_tool/deep_learning/dl.py
+src/cofactor_prediction_tool/metabolic_modeling/__init__.py
+src/cofactor_prediction_tool/metabolic_modeling/gsmmodel.py
+src/cofactor_prediction_tool/preprocessing/EEFS_embedding.py
+src/cofactor_prediction_tool/preprocessing/EmbeddingsESM2.py
+src/cofactor_prediction_tool/preprocessing/EmbeddingsProtFlash.py
+src/cofactor_prediction_tool/preprocessing/FeatureSelection.py
+src/cofactor_prediction_tool/preprocessing/Preprocessing copy.py
+src/cofactor_prediction_tool/preprocessing/Preprocessing.py
+src/cofactor_prediction_tool/preprocessing/ProteinCofactorsDescriptors.py
+src/cofactor_prediction_tool/preprocessing/__init__.py
+src/cofactor_prediction_tool/preprocessing/encodings.py
+src/cofactor_prediction_tool/preprocessing/feature_selection.py
+src/cofactor_prediction_tool/resources/__init__.py
+src/cofactor_prediction_tool/resources/bestesm2_hpo.pth
+src/cofactor_prediction_tool/seqvec/EmbeddingsSeq2Vec.py
+src/cofactor_prediction_tool/seqvec/__init__.py
