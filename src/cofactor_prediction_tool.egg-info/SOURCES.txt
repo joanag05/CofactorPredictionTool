@@ -15,23 +15,25 @@ src/cofactor_prediction_tool/api/ncbi.py
 src/cofactor_prediction_tool/api/pdb.py
 src/cofactor_prediction_tool/api/sabio.py
 src/cofactor_prediction_tool/api/uniprot.py
+src/cofactor_prediction_tool/build_dataset/BuildDataset.py
+src/cofactor_prediction_tool/build_dataset/__init__.py
 src/cofactor_prediction_tool/deep_learning/__init__.py
 src/cofactor_prediction_tool/deep_learning/bestesm2_hpo.pth
 src/cofactor_prediction_tool/deep_learning/cnn_esm.py
-src/cofactor_prediction_tool/deep_learning/dl copy 2.py
-src/cofactor_prediction_tool/deep_learning/dl copy.py
-src/cofactor_prediction_tool/deep_learning/dl.py
+src/cofactor_prediction_tool/deep_learning/cnn_flashprot.py
+src/cofactor_prediction_tool/deep_learning/cnn_seqvec.py
+src/cofactor_prediction_tool/deep_learning/dataset_split.py
+src/cofactor_prediction_tool/machine_learning/MLDescriptors.py
+src/cofactor_prediction_tool/machine_learning/MLEmbeddings.py
+src/cofactor_prediction_tool/machine_learning/__init__.py
 src/cofactor_prediction_tool/metabolic_modeling/__init__.py
 src/cofactor_prediction_tool/metabolic_modeling/gsmmodel.py
-src/cofactor_prediction_tool/preprocessing/EEFS_embedding.py
 src/cofactor_prediction_tool/preprocessing/EmbeddingsESM2.py
 src/cofactor_prediction_tool/preprocessing/EmbeddingsProtFlash.py
 src/cofactor_prediction_tool/preprocessing/FeatureSelection.py
-src/cofactor_prediction_tool/preprocessing/Preprocessing copy.py
 src/cofactor_prediction_tool/preprocessing/Preprocessing.py
 src/cofactor_prediction_tool/preprocessing/ProteinCofactorsDescriptors.py
 src/cofactor_prediction_tool/preprocessing/__init__.py
-src/cofactor_prediction_tool/preprocessing/encodings.py
 src/cofactor_prediction_tool/preprocessing/feature_selection.py
 src/cofactor_prediction_tool/resources/__init__.py
 src/cofactor_prediction_tool/resources/bestesm2_hpo.pth

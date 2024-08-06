@@ -4,10 +4,7 @@ from sklearn.model_selection import train_test_split
 def prepare_and_save_dataset(file_path, output_path, test_size=0.2, val_size=0.15, random_state=42):
 
     df = pd.read_csv(file_path, sep='\t', index_col=0)
-    
-
-    df = df.drop(['Sequence'], axis=1)
-  
+     
     cofactors = ['NAD', 'NADP', 'FAD', 'SAM', 'CoA', 'THF', 'FMN', 'Menaquinone', 'GSH', 'Ubiquinone', 'Plastoquinone', 'Ferredoxin', 'Ferricytochrome']
 
     cofactors_in_dataset = [cofactor for cofactor in cofactors if cofactor in df.columns]
@@ -34,6 +31,6 @@ def prepare_and_save_dataset(file_path, output_path, test_size=0.2, val_size=0.1
     
     print("Dataset prepared and saved successfully.")
 
-file_path = '/home/jgoncalves/cofactor_prediction_tool/data/Final/SeqVec/seqvec'
-output_path = '/home/jgoncalves/cofactor_prediction_tool/data/Final/SeqVec/seqvec.h5'
+file_path = '/home/jgoncalves/cofactor_prediction_tool/data/Final/Flash/final_dataset_protflash_embeddings.tsv'
+output_path = '/home/jgoncalves/cofactor_prediction_tool/data/Final/Flash/flashprot.h5'
 prepare_and_save_dataset(file_path, output_path, test_size=0.2, val_size=0.15, random_state=42)

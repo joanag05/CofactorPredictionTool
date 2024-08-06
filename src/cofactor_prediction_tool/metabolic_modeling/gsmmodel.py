@@ -41,19 +41,26 @@ def update_model(config_file, **kwargs):
     drop_non_predicted_reactions = params["drop_non_predicted_reactions"]
     model = read_sbml_model(model_path)
     metabolites = {met.id for met in model.metabolites}
-    cofactors_map = {key: value for key, value in cofactors_map.items() if set([pair[0] for pair in value]).issubset(metabolites) and set([pair[1] for pair in value]).issubset(metabolites)}
-    gene_cofactors = get_gene_cofactors(model, predictions, cofactors_map)
+    cofactors_map_filter = {}
+    #cofactors_map = {key: value for key, value in cofactors_map.items() if set([pair[0] for pair in value]).issubset(metabolites) and set([pair[1] for pair in value]).issubset(metabolites)}
+    for key, value in cofactors_map.items():
+        for pair in value:
+            if pair[0] in metabolites and pair[1] in metabolites:
+                if key not in cofactors_map_filter:
+                    cofactors_map_filter[key] = []
+                cofactors_map_filter[key].append(pair)
+    gene_cofactors = get_gene_cofactors(model, predictions, cofactors_map_filter)
     added_reactions = set()
     to_remove = set()
     for gene in model.genes:
         if gene.id in predictions.index and gene.id in gene_cofactors:
-            cofactors_predicted = [cofactor for cofactor in cofactors_map.keys() if predictions.loc[gene.id, cofactor] > 0]
+            cofactors_predicted = [cofactor for cofactor in cofactors_map_filter.keys() if predictions.loc[gene.id, cofactor] > 0]
             difference = set(cofactors_predicted) - gene_cofactors[gene.id]
             report["match"] += len(set(cofactors_predicted) & gene_cofactors[gene.id])
             report["mismatch"] += len(set(cofactors_predicted) - gene_cofactors[gene.id])
             if difference:
                 for reaction in set(gene.reactions) - added_reactions:
-                    cofactors = get_cofactor_for_reaction(reaction, cofactors_map)
+                    cofactors = get_cofactor_for_reaction(reaction, cofactors_map_filter)
                     if cofactors:
                         for tmp in difference:
                             new_reaction = copy.deepcopy(reaction)
@@ -71,7 +78,7 @@ def update_model(config_file, **kwargs):
                                     cofactor_st.append(st)
                                     compartments.append(model.metabolites.get_by_id(cofactor).compartment)
                                     new_reaction.add_metabolites({cofactor: -st})
-                                cofactors_to_add = [pair for pair in cofactors_map[tmp] if model.metabolites.get_by_id(pair[0]).compartment in compartments]
+                                cofactors_to_add = [pair for pair in cofactors_map_filter[tmp] if model.metabolites.get_by_id(pair[0]).compartment in compartments]
                                 for pair in cofactors_to_add:
                                     new_reaction.add_metabolites({pair[0]: cofactor_st[0], pair[1]: cofactor_st[1]})
 
