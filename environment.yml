@@ -434,4 +434,3 @@ dependencies:
       - zeep==4.2.1
       - zope-event==5.0
       - zope-interface==6.3
-prefix: /home/jgoncalves/miniforge3/envs/protein

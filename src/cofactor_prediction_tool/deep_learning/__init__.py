@@ -1,2 +1,0 @@
-from cofactor_prediction_tool.deep_learning.dl import DeepCofactorNN
-from cofactor_prediction_tool.deep_learning.dl import train_net

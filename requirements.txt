@@ -10,3 +10,6 @@ biopyhton ~= 1.83
 scikit-learn ~= 1.2.2
 torchvision ~= 0.18.0
 torchmetrics ~= 1.4.0.post0
+tqdm ~= 4.62.3
+optuna ~= 3.0.0
+matplotlib ~= 3.4.3
