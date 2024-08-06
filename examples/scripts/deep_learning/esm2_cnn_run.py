@@ -18,9 +18,9 @@ if torch.cuda.is_available():
 
 def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    dataset_path = r"/home/emanuel/PythonProjects/CofactorPredictionTool/data/Final/ESM2/esm2.h5"
+    dataset_path = r"/../../data/Final/ESM2/esm2.h5"
     (dataloaders, dataset_sizes, dataset_shape, X_test, X_test_tensor, y_test_tensor, labels, weights) = load_data(dataset_path)
-    data_path = "/home/emanuel/PythonProjects/CofactorPredictionTool/data/Final/ESM2/cnn"
+    data_path = "/../../data/Final/ESM2/cnn"
     # Run the model
     model, f1_score, f1_score_sklearn_res = run(device=device, labels=labels, dataset_shape=dataset_shape, dataloaders=dataloaders, dataset_sizes=dataset_sizes,
                                                 x_test_tensor=X_test_tensor, y_test_tensor=y_test_tensor, data_path=data_path)
@@ -35,7 +35,7 @@ def main():
     hpo_optuna(device=device, labels=labels, dataset_shape=dataset_shape, dataloaders=dataloaders, dataset_sizes=dataset_sizes, x_test_tensor=X_test_tensor,
                y_test_tensor=y_test_tensor, model_name="bestesm2_hpo", data_path=data_path)
 
-    shutil.copy(join(data_path, "bestesm2_hpo.pth"), "../../../src/cofactor_prediction_tool/resources/")
+    shutil.copy(join(data_path, "bestesm2_hpo.pth"), "/../../src/cofactor_prediction_tool/resources/")
 
 
 if __name__ == "__main__":
