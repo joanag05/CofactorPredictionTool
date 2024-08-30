@@ -1,0 +1,16 @@
+cobra ~= 0.29.0
+numpy ~= 1.26.4
+pandas ~= 2.2.2
+joblib ~= 1.4.0
+scipy ~= 1.13.0
+torch ~= 2.3.0
+fair-esm ~= 2.0.0
+propythia ~= 3.0.2
+biopyhton ~= 1.83
+scikit-learn ~= 1.2.2
+torchvision ~= 0.18.0
+torchmetrics ~= 1.4.0.post0
+tqdm ~= 4.62.3
+optuna ~= 3.0.0
+matplotlib ~= 3.4.3
+protflash ~= 0.1.1
