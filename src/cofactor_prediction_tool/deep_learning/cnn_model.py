@@ -6,7 +6,6 @@ from tempfile import TemporaryDirectory
 from typing import Union
 import matplotlib.pyplot as plt
 import numpy as np
-import optuna
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -494,7 +493,7 @@ def hpo_optuna(device=None, labels=None, dataset_shape=None, dataloaders=None, d
     This function uses Optuna, a hyperparameter optimization framework, to maximize the F1 score
     of the model. It saves the best model and reports the best hyperparameters found during the search.
     """
-
+    import optuna
     def objective(trial):
         model, f1_score_res, f1_score_sklearn_res = run(trial=trial, device=device, labels=labels, dataset_shape=dataset_shape, dataloaders=dataloaders,
                                                         dataset_sizes=dataset_sizes, x_test_tensor=x_test_tensor, y_test_tensor=y_test_tensor,
