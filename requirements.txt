@@ -14,3 +14,4 @@ tqdm ~= 4.62.3
 optuna ~= 3.0.0
 matplotlib ~= 3.4.3
 protflash ~= 0.1.1
+tensorflow ~= 2.15.0
