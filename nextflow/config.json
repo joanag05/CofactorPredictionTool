@@ -44,7 +44,7 @@
 
 
 "drop_non_predicted_reactions":"False",
-"model_path": "/home/jgoncalves/cofactor_prediction_tool/case_studies/iML1515.xml",
+"model_path": "False",
 "predictions" : "/home/jgoncalves/prediction_test/workdir/predictions.tsv"
 
  

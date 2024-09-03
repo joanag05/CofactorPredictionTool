@@ -104,11 +104,15 @@ process gsmmodel {
 workflow  { 
     fasta_channel = params.fasta ? file(params.fasta) : null
     tsv_channel = params.tsv ? file(params.tsv) : null
-    model_channel = params.model ? file(params.model) : EmptyChannel()
+    model_channel = params.model ? file(params.model) : null
     input_channel = Channel.from(fasta_channel, tsv_channel).flatten().filter{ it != null }
     preprocessed_channel = preprocessing(input_channel)
     embeddings_channel = compute_embeddings(preprocessed_channel)
     (predictions, predictions_proba) = predict(embeddings_channel, 'cnn')
-    gsmmodel(params.config, predictions, model_channel)
+    if (params.model) {
+        gsmmodel(params.config, predictions, model_channel)
+    } else {
+        log.info "No model file provided, skipping GSM model update."
+    }
 }
 

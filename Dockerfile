@@ -57,3 +57,8 @@ RUN curl -fsSL https://get.nextflow.io | bash \
 
 
 COPY ./nextflow /home
+
+EXPOSE 80
+
+CMD ["python", "/home/worker.py"]
+
