@@ -19,9 +19,9 @@ if torch.cuda.is_available():
 def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     os.chdir(r"/home/jgoncalves/cofactor_prediction_tool")
-    dataset_path = r"data/Final/SeqVec/seqvec.h5"
+    dataset_path = r"data/ml_dl_data/SeqVec/seqvec.h5"
     (dataloaders, dataset_sizes, dataset_shape, X_test, X_test_tensor, y_test_tensor, labels, weights) = load_data(dataset_path)
-    data_path = "data/Final/SeqVec/cnn"
+    data_path = "data/ml_dl_data/SeqVec/cnn"
     # Run the model
     model, f1_score, f1_score_sklearn_res = run(device=device, labels=labels, dataset_shape=dataset_shape, dataloaders=dataloaders, dataset_sizes=dataset_sizes,
                                                 x_test_tensor=X_test_tensor, y_test_tensor=y_test_tensor, data_path=data_path)

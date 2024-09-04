@@ -7,14 +7,36 @@ import urllib
 import os
 
 class EmbeddingsSeq2Vec:
+    """
+    Class for computing sequence embeddings using SeqVec model.
+    Args:
+        folder_path (str): The path to the folder where the embeddings will be saved.
+        data_path (str): The path to the data file containing sequences.
+    Methods:
+        fetch_dpo_sequences(): Fetches the DPO sequences from the data file.
+        compute_seqvec_embeddings(): Computes the SeqVec embeddings for the DPO sequences and saves them to a file.
+    """
+        
     def __init__(self, folder_path, data_path):
         self.folder_path = folder_path
         self.data_path = data_path
 
     def fetch_dpo_sequences(self):
+        """
+        Fetches DPO sequences from a CSV file.
+
+        Returns:
+            pandas.DataFrame: A DataFrame containing the DPO sequences.
+        """
         return pd.read_csv(self.data_path, sep='\t')
     
     def compute_seqvec_embeddings(self):
+        """
+        Computes SeqVec embeddings for protein sequences and saves the embeddings to a CSV file.
+        
+        Returns:
+            None
+        """
 
         model_dir = Path('./seq2vec')
         Path.mkdir(model_dir, exist_ok=True)

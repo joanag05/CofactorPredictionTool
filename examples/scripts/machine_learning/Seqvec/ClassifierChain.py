@@ -8,7 +8,7 @@ import os
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.svm import SVC
 
-DATA_PATH = '/home/jgoncalves/cofactor_prediction_tool/data/final_datasets/SeqVec'
+DATA_PATH = '/home/jgoncalves/cofactor_prediction_tool/data/ml_dl_data/SeqVec'
 os.chdir(DATA_PATH)
 
 dataset_filenames = ["seq2vec.tsv"]
@@ -16,7 +16,7 @@ dataset_filenames = ["seq2vec.tsv"]
 # Prepend the directory path to each filename
 dataset_paths = [os.path.join(DATA_PATH, filename) for filename in dataset_filenames]
 
-output_dir = '/home/jgoncalves/cofactor_prediction_tool/data/final_datasets/SeqVec'
+output_dir = '/home/jgoncalves/cofactor_prediction_tool/data/ml_dl_data/SeqVec'
 parameters = [
            
             {

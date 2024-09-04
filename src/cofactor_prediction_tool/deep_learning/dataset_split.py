@@ -2,6 +2,19 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 def prepare_and_save_dataset(file_path, output_path, test_size=0.2, val_size=0.15, random_state=42):
+    """
+    Prepare and save the dataset for deep learning.
+    Args:
+        file_path (str): The path to the input file.
+        output_path (str): The path to save the prepared dataset.
+        test_size (float, optional): The proportion of the dataset to include in the test split. Defaults to 0.2.
+        val_size (float, optional): The proportion of the dataset to include in the validation split. Defaults to 0.15.
+        random_state (int, optional): The seed used by the random number generator. Defaults to 42.
+    Returns:
+        None
+    Raises:
+        None
+    """
 
     df = pd.read_csv(file_path, sep='\t', index_col=0)
     

@@ -2,6 +2,17 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 def prepare_and_save_dataset(file_path, output_path, test_size=0.2, val_size=0.15, random_state=42):
+    """
+    Prepare and save the dataset by splitting it into training, validation, and test sets.
+    Parameters:
+    - file_path (str): The path to the input file.
+    - output_path (str): The path to save the output dataset.
+    - test_size (float): The proportion of the dataset to include in the test set.
+    - val_size (float): The proportion of the dataset to include in the validation set.
+    - random_state (int): The seed used by the random number generator.
+    Returns:
+    None
+    """
 
     df = pd.read_csv(file_path, sep='\t', index_col=0)
      
@@ -31,6 +42,6 @@ def prepare_and_save_dataset(file_path, output_path, test_size=0.2, val_size=0.1
     
     print("Dataset prepared and saved successfully.")
 
-file_path = '/home/jgoncalves/cofactor_prediction_tool/data/Final/Flash/final_dataset_protflash_embeddings.tsv'
-output_path = '/home/jgoncalves/cofactor_prediction_tool/data/Final/Flash/flashprot.h5'
+file_path = '/home/jgoncalves/cofactor_prediction_tool/data/ml_dl_data/Flash/final_dataset_protflash_embeddings.tsv' # change this path to the path of the dataset you want to split
+output_path = '/home/jgoncalves/cofactor_prediction_tool/data/ml_dl_data/Flash/flashprot.h5' # change this path to the path of the dataset you want to split
 prepare_and_save_dataset(file_path, output_path, test_size=0.2, val_size=0.15, random_state=42)

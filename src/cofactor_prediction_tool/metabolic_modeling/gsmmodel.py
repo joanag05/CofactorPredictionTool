@@ -5,6 +5,17 @@ import pandas as pd
 import json
 
 def get_gene_cofactors(model, predictions, cofactors_map):
+    """
+    Retrieves the predicted cofactors for each gene in the given metabolic model.
+
+    Args:
+        model (Model): The metabolic model.
+        predictions (DataFrame): The predictions for each gene.
+        cofactors_map (dict): A dictionary mapping cofactors to their corresponding pairs.
+
+    Returns:
+        dict: A dictionary where the keys are gene IDs and the values are sets of predicted cofactors.
+    """
     gene_cofactors = {}
     for reaction in model.reactions:
         gene_ids = [gene.id for gene in reaction.genes if gene.id in predictions.index]
@@ -21,6 +32,16 @@ def get_gene_cofactors(model, predictions, cofactors_map):
     return gene_cofactors
 
 def get_cofactor_for_reaction(reaction, cofactors_map):
+    """
+    Get the cofactor for a given reaction.
+
+    Parameters:
+    reaction (Reaction): The reaction for which to find the cofactor.
+    cofactors_map (dict): A dictionary mapping cofactors to pairs of metabolites.
+
+    Returns:
+    tuple or None: The cofactor pair if found, otherwise None.
+    """
     cofactors = []
     for cofactor, pairs in cofactors_map.items():
         for pair in pairs:
@@ -33,6 +54,16 @@ def get_cofactor_for_reaction(reaction, cofactors_map):
     return cofactors[0]
 
 def update_model(config_file, **kwargs):
+    """
+    Update the metabolic model based on the predictions and configuration parameters.
+    Args:
+        config_file (str): The path to the configuration file.
+        **kwargs: Additional keyword arguments for overriding the configuration parameters.
+    Returns:
+        None
+    Raises:
+        FileNotFoundError: If the configuration file is not found.
+    """
     report = {'match':0,'mismatch':0, 'match_percent':0, 'mismatch_percent':0}    
     params = json.load(open(config_file))
     model_path = kwargs.get("model_path", params["model_path"])
@@ -42,7 +73,6 @@ def update_model(config_file, **kwargs):
     model = read_sbml_model(model_path)
     metabolites = {met.id for met in model.metabolites}
     cofactors_map_filter = {}
-    #cofactors_map = {key: value for key, value in cofactors_map.items() if set([pair[0] for pair in value]).issubset(metabolites) and set([pair[1] for pair in value]).issubset(metabolites)}
     for key, value in cofactors_map.items():
         for pair in value:
             if pair[0] in metabolites and pair[1] in metabolites:

@@ -20,9 +20,10 @@ if torch.cuda.is_available():
 def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     os.chdir(r"/home/jgoncalves/cofactor_prediction_tool")
-    dataset_path = r"data/Final/ESM2/esm2.h5"
+    dataset_path = r"data/ml_dl_data/ESM2/esm2.h5"
     (dataloaders, dataset_sizes, dataset_shape, X_test, X_test_tensor, y_test_tensor, labels, weights) = load_data(dataset_path)
-    data_path = "data/Final/ESM2/cnn"
+    data_path = "data/ml_dl_data/ESM2/cnn"
+
     # Run the model
     model, f1_score, f1_score_sklearn_res = run(device=device, labels=labels, dataset_shape=dataset_shape, dataloaders=dataloaders, dataset_sizes=dataset_sizes,
                                                 x_test_tensor=X_test_tensor, y_test_tensor=y_test_tensor, data_path=data_path)
@@ -31,11 +32,11 @@ def main():
     torch.save(model, join(data_path, "bestesm2_hpo.pth"))
     
     # Select the optimal thresholds
-    # select_thresholds(X_test, y_test_tensor, data_path=data_path, device=device, labels=labels)
+    select_thresholds(X_test, y_test_tensor, data_path=data_path, device=device, labels=labels)
 
-    # # Perform hyperparameter optimization using Optuna
-    # hpo_optuna(device=device, labels=labels, dataset_shape=dataset_shape, dataloaders=dataloaders, dataset_sizes=dataset_sizes, x_test_tensor=X_test_tensor,
-    # y_test_tensor=y_test_tensor, model_name="bestesm2_hpo", data_path=data_path)
+    #Perform hyperparameter optimization using Optuna
+    hpo_optuna(device=device, labels=labels, dataset_shape=dataset_shape, dataloaders=dataloaders, dataset_sizes=dataset_sizes, x_test_tensor=X_test_tensor,
+    y_test_tensor=y_test_tensor, model_name="bestesm2_hpo", data_path=data_path)
 
     shutil.copy(join(data_path, "bestesm2_hpo.pth"), "src/cofactor_prediction_tool/resources/")
 

@@ -7,7 +7,7 @@ from xgboost import XGBClassifier
 import os
 
 
-DATA_PATH = '/home/jgoncalves/cofactor_prediction_tool/data/Final/SeqVec'
+DATA_PATH = '/home/jgoncalves/cofactor_prediction_tool/data/ml_dl_data/SeqVec'
 os.chdir(DATA_PATH)
 
 dataset_filenames = ["seqvec.tsv"]
@@ -15,7 +15,7 @@ dataset_filenames = ["seqvec.tsv"]
 # Prepend the directory path to each filename
 dataset_paths = [os.path.join(DATA_PATH, filename) for filename in dataset_filenames]
 
-output_dir = '/home/jgoncalves/cofactor_prediction_tool/data/Final/SeqVec'
+output_dir = '/home/jgoncalves/cofactor_prediction_tool/data/ml_dl_data/SeqVec'
 
 param_grid = {
     'estimator__learning_rate': [0.01, 0.1],

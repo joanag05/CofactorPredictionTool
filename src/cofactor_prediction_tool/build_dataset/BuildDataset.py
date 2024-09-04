@@ -193,7 +193,7 @@ class BuilDataset:
         merged_df = self.remove_duplicates_and_short_sequences(merged_df, 45, 5000)
         merged_df = self.read_sequences(merged_df)
 
-        final_output_file = os.path.join(self.data_path, 'final_dataset.tsv')
+        final_output_file = os.path.join(self.data_path, 'dataset.tsv')
         merged_df.to_csv(final_output_file, sep='\t')
         print(f'Final dataset saved to {final_output_file}')
 

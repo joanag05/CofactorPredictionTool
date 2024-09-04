@@ -9,14 +9,14 @@ from skmultilearn.problem_transform import LabelPowerset
 import os
 import pandas as pd
 
-DATA_PATH = '/home/jgoncalves/cofactor_prediction_tool/data/Final/Flash/'
+DATA_PATH = '/home/jgoncalves/cofactor_prediction_tool/data/ml_dl_data/Flash/'
 os.chdir(DATA_PATH)
 
 dataset_filenames = ['final_dataset_protflash_embeddings.tsv']
 
 dataset_paths = [os.path.join(DATA_PATH, filename) for filename in dataset_filenames]
 
-output_dir = '/home/jgoncalves/cofactor_prediction_tool/data/Final/Flash/'
+output_dir = '/home/jgoncalves/cofactor_prediction_tool/data/ml_dl_data/Flash/'
 param_grid = [
            
             {

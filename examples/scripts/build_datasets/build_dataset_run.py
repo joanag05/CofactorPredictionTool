@@ -9,7 +9,7 @@ from cofactor_prediction_tool.build_dataset import BuildDataset
 
 
 if __name__ == "__main__":
-    data_path = '/home/jgoncalves/cofactor_prediction_tool/data/Final'
+    data_path = '/home/jgoncalves/cofactor_prediction_tool/data/dataset'
     generator = BuildDataset(data_path)
     generator.generate_final_dataset()
 

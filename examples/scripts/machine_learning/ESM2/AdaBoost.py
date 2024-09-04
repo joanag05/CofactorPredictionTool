@@ -7,14 +7,14 @@ from sklearn.multioutput import MultiOutputClassifier
 import os
 
 
-DATA_PATH = '/home/jgoncalves/cofactor_prediction_tool/data/Final/ESM2'
+DATA_PATH = '/home/jgoncalves/cofactor_prediction_tool/data/ml_dl_data/ESM2'
 os.chdir(DATA_PATH)
 
 dataset_filenames = ["esm.tsv"]
 
 dataset_paths = [os.path.join(DATA_PATH, filename) for filename in dataset_filenames]
 
-output_dir = '/home/jgoncalves/cofactor_prediction_tool/data/Final/ESM2'
+output_dir = '/home/jgoncalves/cofactor_prediction_tool/data/ml_dl_data/ESM2'
 
 param_grid = {
             'estimator__n_estimators': [50, 100, 200],

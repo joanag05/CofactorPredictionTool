@@ -5,7 +5,7 @@ from cofactor_prediction_tool.preprocessing.EmbeddingsProtFlash import Embedding
 import time
 import os
 
-DATA_PATH = '/home/jgoncalves/cofactor_prediction_tool/data/Final/'
+DATA_PATH = '/home/jgoncalves/cofactor_prediction_tool/data/ml_dl_data/'
 os.chdir(DATA_PATH)
 
 def main(input_paths, output_paths):
@@ -17,7 +17,7 @@ def main(input_paths, output_paths):
 
 if __name__ == "__main__":
     init_time = time.time()
-    input_paths = ['final_dataset.tsv']
+    input_paths = ['dataset.tsv']
     output_paths = [DATA_PATH for _ in range(len(input_paths))]
     main(input_paths, output_paths)
     print("Execution time:", time.time() - init_time)
