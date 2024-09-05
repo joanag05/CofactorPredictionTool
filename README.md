@@ -129,7 +129,7 @@ nextflow run main.nf --fasta input.fasta --model/path/to/gsm_model.xml --config 
 ```
 
 
-### Docker Deployment
+## Docker Deployment
 
 **1. Build the Docker image:**
 
@@ -142,7 +142,7 @@ docker build -t cofactor-prediction
 docker run -v /path/to/path/workdir:/workdir cofactor-prediction
 ```
 
-### Example Usage 
+## Example Usage 
 
 To predict cofactors for a set of proteins:
 
@@ -151,7 +151,7 @@ To predict cofactors for a set of proteins:
 3. Download the prediction results in a TSV file and the updated GSM model (if applicable).
 
 
-### License
+## License
 
 This project is licensed under the MIT License. See the ![License](LICENSE.txt) file for more information.
 
