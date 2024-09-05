@@ -45,7 +45,11 @@
 
 "drop_non_predicted_reactions":"False",
 "model_path": "False",
-"predictions" : "/home/jgoncalves/prediction_test/workdir/predictions.tsv"
+"predictions" : "/home/jgoncalves/prediction_test/workdir/predictions.tsv",
+
+"prediction_model": "cnn"
+
+
 
  
 

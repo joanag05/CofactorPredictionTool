@@ -6,8 +6,7 @@ import shutil
 import datetime
 from FilesUtilities import compressFiles
 import logging
-
-
+import json
 
 app = Flask(__name__)
 
@@ -29,7 +28,6 @@ handler.setFormatter(formatter)
 logger = logging.getLogger(__name__)
 logger.addHandler(handler)
 logger.setLevel(logging.DEBUG)
-
 
 
 PROCESS_PATH_MEMOTE = '/home/main.nf'
@@ -114,24 +112,45 @@ def startCofactor():
         if not (fasta_file):
             logger.error("Missing fasta file")
             return jsonify({"error": "Missing fasta file"}), 400
+        
         if not (json_file):
-            json_file = 'config.json'
-        if not (xml_file):
+            json_file = '/home/config.json'
 
-            subprocess.Popen(['nextflow', 'run', '/home/main.nf',
-                               '--fasta', fasta_file, 
+        with open(json_file) as f:
+            json_data = json.load(f)
+        
+        prediction_model = json_data.get('prediction_model', 'cnn')
+
+
+        if not (xml_file):
+            p=subprocess.Popen(['nextflow', 'run', '/home/main.nf',
+                               '--fasta', fasta_file,
                                '--config' ,json_file,
+                               '--prediction_model', prediction_model,
                                 '-w', '/workdir/workflow'])
         else:
-            subprocess.Popen(['nextflow', 'run', '/home/main.nf',
-                               '--fasta', fasta_file, 
-                               '--model', xml_file, 
+            p=subprocess.Popen(['nextflow', 'run', '/home/main.nf',
+                               '--fasta', fasta_file,
+                               '--model', xml_file,
                                '--config' ,json_file,
+                                '--prediction_model', prediction_model,
                                 '-w', '/workdir/workflow'])
-            
+
+        p.wait()
+
+        logger.info("Nextflow process finished")
+
         for file in os.listdir('/workdir/workflow'):
             if file.endswith('.tsv') or file.endswith('.xml') or file.endswith('.json'):
                 shutil.move(f'/workdir/workflow/{file}', f'{RESULTS_PATH}/{file}')
+
+        shutil.rmtree('/workdir/workflow', ignore_errors=True)
+
+        compressFiles(RESULTS_PATH, RESULTS_PATH + 'results.zip')
+
+        with open(RESULTS_PATH + "/processComplete", "w") as process_complete:
+            process_complete.write("Process complete!")
+
 
 
         running = True
@@ -181,7 +200,7 @@ def display_msg():
 
 
         return send_file(RESULTS_PATH + "results.zip", as_attachment=True,
-                        attachment_filename='results.zip'), 200
+                        download_name='results.zip'), 200
 
 
 

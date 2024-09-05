@@ -106,9 +106,10 @@ workflow  {
     tsv_channel = params.tsv ? file(params.tsv) : null
     model_channel = params.model ? file(params.model) : null
     input_channel = Channel.from(fasta_channel, tsv_channel).flatten().filter{ it != null }
+    prediction_model = params.prediction_model ? params.prediction_model : 'cnn'
     preprocessed_channel = preprocessing(input_channel)
     embeddings_channel = compute_embeddings(preprocessed_channel)
-    (predictions, predictions_proba) = predict(embeddings_channel, 'cnn')
+    (predictions, predictions_proba) = predict(embeddings_channel, prediction_model)
     if (params.model) {
         gsmmodel(params.config, predictions, model_channel)
     } else {
