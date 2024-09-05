@@ -116,11 +116,12 @@ To use a custom configuration file for specific predictions, include the path to
 
 ```bash
 nextflow run main.nf --fasta input.fasta --config /path/to/config.json --outdir results/
-
 ```
 **5 Running the Tool with a GSM Model**
-nextflow run main.nf --fasta input.fasta --model /path/to/gsm_model.xml --outdir results/
 
+```bash
+nextflow run main.nf --fasta input.fasta --model /path/to/gsm_model.xml --outdir results/
+```
 **6 Running the Tool with a Custom Config File and a GSM Model**
   
 ```bash
