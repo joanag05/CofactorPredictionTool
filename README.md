@@ -53,55 +53,93 @@ The diagram below shows the workflow for the Cofactor Prediction Tool.
 
 ### From the Web Service
 
-The tool can be used from [merlin] (version 4.0.15 - to be released soon)  or directly through the hosted web service (currently available only to members of the University of Minho).
+The tool can be used from *merlin* (version 4.0.15 - to be released soon)  or directly through the hosted web service (currently available only to members of the University of Minho).
 
-1. Upload the following files:
+**1. Upload the following files:**
 
-    * FASTA File (required): Contains the protein sequences. 
-    * CONFIG file (optional): A JSON file with custom settings for more specific predictions.
-    * GSM Model (optional): A GSM Model in XML format for updating based on cofactor prediction.
+* FASTA File (required): Contains the protein sequences. 
+* GSM Model (optional): A GSM Model in XML format for updating based on cofactor prediction.
+* CONFIG file (optional): A JSON file with custom settings for more specific predictions.
+      
+#### Configuration File
+
+The tool provides a `config.json` file where you can customize various settings, such as choosing the machine learning model insteadad of the default DL model, changing prediction thresholds, or specifying cofactor mappings. Below is a basic example of a config file:
+
+```json
+{
+  "model_type": "cnn",  // Change to "xgboost" or "labelpowerset" to use the best two ML models
+  "cofactors_map": {
+    "NAD": [["nad_c", "nadh_c"], ... ]
+    ...
+  },
+  "drop_non_predicted_reactions": "False", // Change to "True" if you want to drop the non predicted reactions from the model
+  "model_path": "/path/to/your/gsm_model.xml"
+}
+```
+   
 
 A FASTA file containing the protein sequences for which you want to predict cofactors
 A CONFIG file JSON file with configuration settings for more customized predictions. (Optional)
 A GSM model file in XML format for updating based on cofactor predictions. (Optional)
 
-2. Submit the job: Once the files are uploaded, submit the job, and the system will process the predictions.
+**2. Submit the job:** Once the files are uploaded, submit the job, and the system will process the predictions.
 
-3. Download Results: After the job is completed, download the results in a zip folder containing 2 TSV files with the predictions and, if applicable, the updated GSM model.
+**3. Download Results:** After the job is completed, download the results in a zip folder containing 2 TSV files with the predictions and, if applicable, the updated GSM model.
 
 ## Local Setup and Usage
 
-1. Clone the Repository
-
+**1. Clone the Repository**
+   
+```bash
 git clone https://github.com/joanag05/CofactorPredictionTool.git
 cd CofactorPredictionTool
+```
 
 
-2. Install Dependencies
 
+**2. Install Dependencies**
+
+```bash
 conda create --name cofactor_prediction python=3.11
 conda activate cofactor_prediction
 pip install .
+```
 
-3. Run the tool
+**3. Run the tool**
 
+```bash
 nextflow run main.nf --fasta input.fasta --outdir results/
+```
+**4. Running the Tool with a Custom Config File**
 
-* --fasta: Path to your input FASTA file.
-* --gsm: (Optional) Path to the GSM model file for updating.
-* --config: (Optional) Path to the configuration file for custom predictions.
+To use a custom configuration file for specific predictions, include the path to the config file when running the tool:
+
+```bash
+nextflow run main.nf --fasta input.fasta --config /path/to/config.json --outdir results/
+
+```
+**5 Running the Tool with a GSM Model**
+nextflow run main.nf --fasta input.fasta --model /path/to/gsm_model.xml --outdir results/
+
+**6 Running the Tool with a Custom Config File and a GSM Model**
+  
+```bash
+nextflow run main.nf --fasta input.fasta --model/path/to/gsm_model.xml --config /path/to/config.json --outdir results/
+```
 
 
 ### Docker Deployment
 
-1. Build the Docker image:
+**1. Build the Docker image:**
 
+```bash
 docker build -t cofactor-prediction
-
+```
 2. Run the Docker container:
 
+```bash
 docker run -v /path/to/path/workdir:/workdir cofactor-prediction
-
+```
 
 ### Example Usage 
 
