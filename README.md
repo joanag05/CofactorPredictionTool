@@ -39,7 +39,7 @@ These databases provide detailed protein and cofactor data, which are used to tr
 
 The diagram below shows the workflow for the Cofactor Prediction Tool.
 
-![Workflow Image](data/images/workflow.png)
+![Workflow Image](workflow.png)
 
 1. Input: Provide a required FASTA file with protein sequences. Optionally, you can include a CONFIG file and a GSM model.
 2. Preprocessing:  The FASTA file is cleaned and prepared for analysis.
