@@ -42,6 +42,6 @@ def prepare_and_save_dataset(file_path, output_path, test_size=0.2, val_size=0.1
     
     print("Dataset prepared and saved successfully.")
 
-file_path = '/home/jgoncalves/cofactor_prediction_tool/data/ml_dl_data/Flash/final_dataset_protflash_embeddings.tsv' # change this path to the path of the dataset you want to split
-output_path = '/home/jgoncalves/cofactor_prediction_tool/data/ml_dl_data/Flash/flashprot.h5' # change this path to the path of the dataset you want to split
+file_path = '/home/jgoncalves/cofactor_prediction_tool/data/reviewed/filtered_protein_embeddings.tsv' # change this path to the path of the dataset you want to split
+output_path = '/home/jgoncalves/cofactor_prediction_tool/data/reviewed/filtered_protein_embeddings.h5' # change this path to the path of the dataset you want to split
 prepare_and_save_dataset(file_path, output_path, test_size=0.2, val_size=0.15, random_state=42)

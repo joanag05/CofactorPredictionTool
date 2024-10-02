@@ -1,0 +1,1 @@
+from cofactor_prediction_tool.metabolic_modeling import get_gene_cofactors,get_cofactor_for_reaction

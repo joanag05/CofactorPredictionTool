@@ -71,3 +71,23 @@ class Preprocessing:
         read_seqs = ReadSequence()
         self.df = read_seqs.par_preprocessing(dataset=self.df, col='Sequence', B='N', Z='Q', U='C', O='K', J='I', X='')
         return self.df
+    
+if __name__ == "__main__":
+    # Create an instance of the Preprocessing class
+    preprocessing = Preprocessing()
+
+    # Read the dataset from a TSV file
+    input_path = '/home/jgoncalves/cofactor_prediction_tool/data/dataset/dataset_reviewed.tsv'
+    preprocessing.read_tsv(input_path)
+
+    # Remove duplicates and short sequences
+    preprocessing.remove_duplicates_and_short_sequences()
+
+    # Read sequences
+    preprocessing.read_sequences()
+
+    # Write the processed DataFrame to a TSV file
+    output_path = '/home/jgoncalves/cofactor_prediction_tool/data/dataset/dataset_reviewedp.tsv'
+    preprocessing.write_tsv(output_path)
+
+    print("Preprocessing completed and saved to output file.")

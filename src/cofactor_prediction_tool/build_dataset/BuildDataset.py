@@ -41,10 +41,10 @@ class BuilDataset:
         os.chdir(data_path)
         self.uniprotapi = Uniprot()
 
-        self.rhea_reactions = {'Menaquinone': [27834,27409,28494,29179,29235,57012,18641,74079], 
+        self.rhea_reactions = {'Menaquinone': [27834,27409,74079], 
                                'GSH':[24424,19057,48620,48888,50708],
-                               'FAD': [24004,24052,30146,30595,31287,42800,43448,43456,43464,43780],
-                                'FMN': [21620,21624,17181,31599],'Plastoquinone': [30287,22148],'Ubiquinone': [27405,63936,62608],'Ferricytochrome': [24236,43108,45032,51224,77903]}
+                               'FAD': [24004,24052,42800,43448,43456,43464,43780],
+                                'FMN': [21620,17181,31599],'Plastoquinone': [30287,22148],'Ubiquinone': [27405,63936],'Ferricytochrome': [24236,43108,45032,51224,77903]}
 
         
         self.brenda_api = BrendaParser()
@@ -196,5 +196,3 @@ class BuilDataset:
         final_output_file = os.path.join(self.data_path, 'dataset.tsv')
         merged_df.to_csv(final_output_file, sep='\t')
         print(f'Final dataset saved to {final_output_file}')
-
-

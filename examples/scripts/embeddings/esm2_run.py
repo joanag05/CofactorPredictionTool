@@ -3,7 +3,7 @@ import sys
 sys.path.append(r"/home/jgoncalves/cofactor_prediction_tool/src")
 import os
 from cofactor_prediction_tool.preprocessing.EmbeddingsESM2 import EmbeddingsESM2
-DATA_PATH = '/home/jgoncalves/cofactor_prediction_tool/data/ml_dl_data/'
+DATA_PATH = '/home/jgoncalves/cofactor_prediction_tool/data/dataset'
 os.chdir(DATA_PATH)
 
 def main(input_paths, output_paths):
@@ -14,6 +14,6 @@ def main(input_paths, output_paths):
 
 if __name__ == "__main__":
     print(os.getcwd())
-    input_paths = ['dataset.tsv']
-    output_paths = ['esm.tsv']
+    input_paths = ['dataset_reviewedp.tsv']
+    output_paths = ['esm_reviewed.tsv']
     main(input_paths, output_paths)

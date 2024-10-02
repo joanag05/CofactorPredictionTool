@@ -210,4 +210,66 @@ def download_uniprot_batch(id_list):
         gene_id_seq_map[protein_id] = result[0]
     return gene_id_seq_map
         
-      
+
+
+
+def check_reviewed_status(accession_numbers):
+    """
+    Checks if the given accession numbers are reviewed in UniProt.
+
+    Args:
+        accession_numbers (list): A list of UniProt accession numbers.
+
+    Returns:
+        tuple: Two lists, one with reviewed IDs and another with unreviewed IDs.
+    """
+    retries = Retry(total=5, backoff_factor=0.25, status_forcelist=[500, 502, 503, 504])
+    session = requests.Session()
+    session.mount("https://", HTTPAdapter(max_retries=retries))
+
+
+    bach_size = 10
+
+    reviewed_ids = []
+    unreviewed_ids = []
+
+
+    for i in range(0, len(accession_numbers), bach_size):
+        batch = accession_numbers[i:i + bach_size]
+        batch_query = ' OR '.join(batch)
+        url = f'https://rest.uniprot.org/uniprotkb/search?query={batch_query}&size=500&fields=accession,reviewed'
+        response = session.get(url)
+        if response.status_code == 200:
+            data = response.json()
+            for result in data['results']:
+                accession = result['primaryAccession']
+                # check if the primary accession is in the list of accessions
+                if accession in batch:
+                    if 'UniProtKB reviewed (Swiss-Prot)' in result.get("entryType", ""):
+                        reviewed_ids.append(accession)
+                    else:
+                        unreviewed_ids.append(accession)
+            
+
+    return reviewed_ids, unreviewed_ids
+
+if __name__ == "__main__":
+    import pandas as pd
+    df = pd.read_csv('/home/jgoncalves/cofactor_prediction_tool/data/ml_dl_data/ESM2/esm.tsv', sep='\t', usecols=[0])
+
+    accession_numbers = df.iloc[:, 0].tolist()
+
+    reviewed, unreviewed = check_reviewed_status(accession_numbers)
+
+    # Save the results to two separate files
+    reviewed_df = pd.DataFrame(reviewed, columns=["Accession"])
+    unreviewed_df = pd.DataFrame(unreviewed, columns=["Accession"])
+    print(reviewed_df)
+    reviewed_df.to_csv('/home/jgoncalves/cofactor_prediction_tool/data/reviewed_ids.csv', index=False)
+    unreviewed_df.to_csv('/home/jgoncalves/cofactor_prediction_tool/data/unreviewed_ids.csv', index=False)
+
+    print("Reviewed IDs saved to 'reviewed_ids.csv'")
+    print("Unreviewed IDs saved to 'unreviewed_ids.csv'")
+
+
+

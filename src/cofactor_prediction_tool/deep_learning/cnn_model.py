@@ -520,19 +520,21 @@ def hpo_optuna(device=None, labels=None, dataset_shape=None, dataloaders=None, d
     model = load_model(model_path=join(data_path, model_name + ".pth"))
     f1_score_res, f1_score_sklearn_res = test_model(model, x_test_tensor, y_test_tensor, labels, data_path=data_path)
 
-def predict(model: nn.Module, x: pd.DataFrame, device: torch.device = None, labels: list = None, threshold: float = 0.5):
+
+def predict(model: nn.Module, x: pd.DataFrame, original_labels: pd.DataFrame, device: torch.device = None, labels: list = None, threshold: float = 0.5):
     """
-    Generate binary predictions for the input data using the trained model.
+    Generate binary predictions for the input data using the trained model and include original labels.
     
     Args:
         model (torch.nn.Module): The trained model to use for prediction.
         x (pd.DataFrame): The input data tensor.
+        original_labels (pd.DataFrame): The original labels DataFrame.
         device (torch.device, optional): The device to run the model on. Default is CUDA if available.
         labels (list, optional): List of output labels. Default is None.
         threshold (float, optional): Threshold to convert model outputs to binary labels. Default is 0.5.
     
     Returns:
-        pandas.DataFrame: A DataFrame containing the binary predictions.
+        pandas.DataFrame: A DataFrame containing the original labels and binary predictions.
     """
     sigmoid = nn.Sigmoid()
     batch_size = len(x)
@@ -540,7 +542,7 @@ def predict(model: nn.Module, x: pd.DataFrame, device: torch.device = None, labe
     if device is None:
         device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-    test_dataloader = DataLoader(TensorDataset(torch.tensor(x.values, dtype=torch.float).unsqueeze(1)), batch_size=batch_size, shuffle=False)
+    test_dataloader = DataLoader(TensorDataset(torch.tensor(x.values, dtype=torch.float)), batch_size=batch_size, shuffle=False)
     with torch.no_grad():
         model.eval()
         for batch in test_dataloader:
@@ -558,25 +560,28 @@ def predict(model: nn.Module, x: pd.DataFrame, device: torch.device = None, labe
         if labels is None:
             labels = [f"label_{i}" for i in range(all_outputs.shape[1])]
 
-        df = pd.DataFrame(all_outputs, columns=labels)
-        df.index = x.index
+        predictions_df = pd.DataFrame(all_outputs.numpy(), columns=[f"{label}_pred" for label in labels])
+        predictions_df.index = x.index
 
-    return df
+        combined_df = pd.concat([original_labels, predictions_df], axis=1)
+
+    return combined_df
 
 
-def predict_proba(model: nn.Module, x: Union[torch.Tensor, pd.DataFrame], device: torch.device = None, labels: list = None, batch_size: int = None):
+def predict_proba(model: nn.Module, x: Union[torch.Tensor, pd.DataFrame], original_labels: pd.DataFrame, device: torch.device = None, labels: list = None, batch_size: int = None):
     """
-    Generate probability predictions for the input data using the trained model.
+    Generate probability predictions for the input data using the trained model and include original labels.
     
     Args:
         model (torch.nn.Module): The trained model to use for prediction.
         x (Union[torch.Tensor, pd.DataFrame]): The input data tensor or DataFrame.
+        original_labels (pd.DataFrame): The original labels DataFrame.
         device (torch.device, optional): The device to run the model on. Default is CUDA if available.
         labels (list, optional): List of output labels. Default is None.
         batch_size (int, optional): The batch size for processing input data. Default is the length of X.
     
     Returns:
-        pandas.DataFrame: A DataFrame containing the predicted probabilities.
+        pandas.DataFrame: A DataFrame containing the original labels and predicted probabilities.
     """
     sigmoid = nn.Sigmoid()
 
@@ -587,7 +592,7 @@ def predict_proba(model: nn.Module, x: Union[torch.Tensor, pd.DataFrame], device
     if device is None:
         device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-    test_dataloader = DataLoader(TensorDataset(torch.tensor(x.values, dtype=torch.float).unsqueeze(1)), batch_size=batch_size, shuffle=False)
+    test_dataloader = DataLoader(TensorDataset(torch.tensor(x.values, dtype=torch.float)), batch_size=batch_size, shuffle=False)
     with torch.no_grad():
         model.eval()
         for batch in test_dataloader:
@@ -603,7 +608,9 @@ def predict_proba(model: nn.Module, x: Union[torch.Tensor, pd.DataFrame], device
         if labels is None:
             labels = [f"label_{i}" for i in range(all_outputs.shape[1])]
 
-        df = pd.DataFrame(all_outputs, columns=labels)
-        df.index = x.index
+        predictions_df = pd.DataFrame(all_outputs.numpy(), columns=[f"{label}_proba" for label in labels])
+        predictions_df.index = x.index
 
-    return df.round(3)
+        combined_df = pd.concat([original_labels, predictions_df], axis=1)
+
+    return combined_df.round(3)
