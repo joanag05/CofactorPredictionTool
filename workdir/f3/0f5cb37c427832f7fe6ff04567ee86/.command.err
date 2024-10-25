@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/jgoncalves/cofactor_prediction_tool/workdir/f3/0f5cb37c427832f7fe6ff04567ee86/.command.sh", line 2, in <module>
+    from cofactor_prediction_tool.preprocessing import Preprocessing
+  File "/home/jgoncalves/miniforge3/lib/python3.10/site-packages/cofactor_prediction_tool-0.0.1-py3.10.egg/cofactor_prediction_tool/preprocessing/__init__.py", line 1, in <module>
+  File "/home/jgoncalves/miniforge3/lib/python3.10/site-packages/cofactor_prediction_tool-0.0.1-py3.10.egg/cofactor_prediction_tool/preprocessing/Preprocessing.py", line 1, in <module>
+  File "/home/jgoncalves/miniforge3/lib/python3.10/site-packages/pandas-2.2.2-py3.10-linux-x86_64.egg/pandas/__init__.py", line 19, in <module>
+    raise ImportError(
+ImportError: Unable to import required dependencies:
+pytz: No module named 'pytz'

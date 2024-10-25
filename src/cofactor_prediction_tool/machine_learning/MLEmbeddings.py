@@ -111,6 +111,14 @@ class ML:
         y = data[cofactors_in_dataset]
 
         X_train, X_test, y_train, y_test = self.multilabel_train_test_split(X, y, stratify=y, test_size=0.3, random_state=42)
+
+        # Print label counts for train and test sets
+        print("Label counts in the training set:")
+        print(y_train.sum(axis=0))  # Summing each column to get the count of each label in train set
+        
+        print("\nLabel counts in the test set:")
+        print(y_test.sum(axis=0))  # Summing each column to get the count of each label in test set
+
         results = {}
         pd.set_option('display.max_columns', None)
         print(y_test)
@@ -118,60 +126,60 @@ class ML:
         string_columns = X.select_dtypes(include=['object']).columns
 
 
-        grid_search = GridSearchCV(estimator=classifier, param_grid=self.param_grid, cv=3, n_jobs=-1, verbose=2, scoring='f1_macro')
+    #     grid_search = GridSearchCV(estimator=classifier, param_grid=self.param_grid, cv=3, n_jobs=-1, verbose=2, scoring='f1_macro')
 
-        grid_search.fit(X_train, y_train)
+    #     grid_search.fit(X_train, y_train)
        
-        best_classifier = grid_search.best_estimator_
-        dump(best_classifier, f"{name}_model.joblib")
+    #     best_classifier = grid_search.best_estimator_
+    #     dump(best_classifier, f"{name}_model.joblib")
 
-        y_pred = best_classifier.predict(X_test)
+    #     y_pred = best_classifier.predict(X_test)
 
-        if not isinstance(y_pred, np.ndarray): 
-            y_pred_fd = pd.DataFrame.sparse.from_spmatrix(y_pred, columns=cofactors_in_dataset, index=y_test.index)
-        else:
-            y_pred_fd = pd.DataFrame(y_pred, columns=cofactors_in_dataset, index=y_test.index)
+    #     if not isinstance(y_pred, np.ndarray): 
+    #         y_pred_fd = pd.DataFrame.sparse.from_spmatrix(y_pred, columns=cofactors_in_dataset, index=y_test.index)
+    #     else:
+    #         y_pred_fd = pd.DataFrame(y_pred, columns=cofactors_in_dataset, index=y_test.index)
 
-        y_pred_fd = y_pred_fd.add_prefix(name)
+    #     y_pred_fd = y_pred_fd.add_prefix(name)
 
-        y_test_pred = pd.concat([y_test, y_pred_fd], axis=1)
+    #     y_test_pred = pd.concat([y_test, y_pred_fd], axis=1)
 
-        accuracy = accuracy_score(y_test, y_pred)
-        hamming = hamming_loss(y_test, y_pred)
-        report = classification_report(y_test, y_pred)
+    #     accuracy = accuracy_score(y_test, y_pred)
+    #     hamming = hamming_loss(y_test, y_pred)
+    #     report = classification_report(y_test, y_pred)
 
-        confusion = multilabel_confusion_matrix(y_test, y_pred)
-        results[name] = {"accuracy": accuracy, "report": report, "confusion": confusion, "hamming_loss": hamming}
+    #     confusion = multilabel_confusion_matrix(y_test, y_pred)
+    #     results[name] = {"accuracy": accuracy, "report": report, "confusion": confusion, "hamming_loss": hamming}
 
-        print(results[name])
+    #     print(results[name])
 
-        return results, y_test_pred
+    #     return results, y_test_pred
 
-    def save_results_to_file(self, results, filename):
-        """
-        Save the classification results to a file.
+    # def save_results_to_file(self, results, filename):
+    #     """
+    #     Save the classification results to a file.
 
-        Parameters:
-        - results (dict): Dictionary containing the classification results.
-        - filename (str): Name of the output file.
+    #     Parameters:
+    #     - results (dict): Dictionary containing the classification results.
+    #     - filename (str): Name of the output file.
 
-        Returns:
-        - None
-        """
-        with open(filename, 'w') as file:
-            for name, result in results.items():
-                file.write(f"Classifier: {name}\n")
-                file.write("-" * 20 + "\n") 
-                if 'error' in result:
-                    file.write(f"Error: {result['error']}\n\n")
-                else:
-                    file.write(f"Accuracy: {result['accuracy']:.3f}\n")
-                    file.write(f"Hamming Loss: {result['hamming_loss']:.5f}\n")
-                    file.write("Classification Report:\n")
-                    file.write(f"{result['report']}\n")
-                    file.write("Confusion Matrix:\n")
+    #     Returns:
+    #     - None
+    #     """
+    #     with open(filename, 'w') as file:
+    #         for name, result in results.items():
+    #             file.write(f"Classifier: {name}\n")
+    #             file.write("-" * 20 + "\n") 
+    #             if 'error' in result:
+    #                 file.write(f"Error: {result['error']}\n\n")
+    #             else:
+    #                 file.write(f"Accuracy: {result['accuracy']:.3f}\n")
+    #                 file.write(f"Hamming Loss: {result['hamming_loss']:.5f}\n")
+    #                 file.write("Classification Report:\n")
+    #                 file.write(f"{result['report']}\n")
+    #                 file.write("Confusion Matrix:\n")
 
-                    for matrix in result['confusion']:
-                        np.savetxt(file, matrix, fmt="%d")
-                        file.write("\n")
-                    file.write("=" * 40 + "\n\n")
+    #                 for matrix in result['confusion']:
+    #                     np.savetxt(file, matrix, fmt="%d")
+    #                     file.write("\n")
+    #                 file.write("=" * 40 + "\n\n")

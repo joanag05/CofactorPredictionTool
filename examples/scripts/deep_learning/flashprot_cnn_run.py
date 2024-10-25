@@ -22,7 +22,7 @@ def main():
     os.chdir(r"/home/jgoncalves/cofactor_prediction_tool")
     dataset_path = r"data/ml_dl_data/Flash/flashprot.h5"
     (dataloaders, dataset_sizes, dataset_shape, X_test, X_test_tensor, y_test_tensor, labels, weights) = load_data(dataset_path)
-    data_path = "data/Final/ml_dl_data/cnn"
+    data_path = "data/Final/ml_dl_data/Flash/bu"
     # Run the model
     model, f1_score, f1_score_sklearn_res = run(device=device, labels=labels, dataset_shape=dataset_shape, dataloaders=dataloaders, dataset_sizes=dataset_sizes,
                                                 x_test_tensor=X_test_tensor, y_test_tensor=y_test_tensor, data_path=data_path)
@@ -33,11 +33,8 @@ def main():
     # Select the optimal thresholds
     select_thresholds(X_test, y_test_tensor, data_path=data_path, device=device, labels=labels)
 
-    # Perform hyperparameter optimization using Optuna
-    hpo_optuna(device=device, labels=labels, dataset_shape=dataset_shape, dataloaders=dataloaders, dataset_sizes=dataset_sizes, x_test_tensor=X_test_tensor,
-               y_test_tensor=y_test_tensor, model_name="bestflashprot_hpo", data_path=data_path)
 
-    shutil.copy(join(data_path, "bestflashprot_hpo.pth"), "src/cofactor_prediction_tool/resources/")
+    shutil.copy(join(data_path, "bestflashprot_hpo.pth"), "src/cofactor_prediction_tool/resources2/")
 
 
 if __name__ == "__main__":
